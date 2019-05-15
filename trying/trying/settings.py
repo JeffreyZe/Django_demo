@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     #own
     'mockdata',
     'pages',
+    'mockuser'
 ]
 
 MIDDLEWARE = [

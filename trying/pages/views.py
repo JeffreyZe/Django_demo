@@ -7,6 +7,16 @@ def home_view(request, *args, **kwargs):
 
     # return HttpResponse("<h1> Hello World </h1>")
     return render(request, 'home.html', {})
+
+def people_view(request, *args, **kwargs):
+    my_context = {
+        'my_text': 'This is our team',
+        'my_slogon': 'Make data breach optional',
+        'my_team': ['front end', 'back end', 'middleware'],
+        'my_html': '<h3> Trying filter safe </h3>',
+    }
+    # return HttpResponse("<h1> Hello World </h1>")
+    return render(request, 'people.html', my_context)
     
     
     

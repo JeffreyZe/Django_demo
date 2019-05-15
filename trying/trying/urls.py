@@ -16,10 +16,14 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
-# from pages.views import home_view
+from pages.views import home_view, people_view
+from mockuser.views import mockuser_detail_view
 
 urlpatterns = [
-    # path('', home_view, name='home'),
+    path('home/', home_view, name='home'),
+    path('people/', people_view, name='people'),
+    path('mockuser/', mockuser_detail_view, name='mockuser'),
+
     path('admin/', admin.site.urls),
     path('', include('mockdata.urls'))
 ]

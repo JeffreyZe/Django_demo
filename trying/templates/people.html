@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% comment %} <img src="dathena_logo.png"/> {% endcomment %}
+    
+
+    {% block content %}
+
+    <title> Peple </title>
+    <head> This is the people page of Dathena </head>
+    <h1> Hello World, I am people.html </h1>
+
+    User is: {{request.user}} <br/>
+    User is autheticated: {{request.user.is_authenticated}} <br/> <br/>
+
+
+    {{ my_text }}, {{ my_slogon|upper}} <br/>  <!-- This is template filters and tags -->
+    {{ my_team }}  <br/>
+     
+
+    <!-- This is for loop -->
+    {% for team in my_team %}
+    <li> 
+        {{forloop.counter}} - {{team|capfirst}} <!-- This is template filters and tags -->
+        {% if team == 'middleware' %}
+            (Best team)
+        {% endif %} 
+    </li>
+    {% endfor %}
+    <ul>
+    <li> A </li>
+    <li> B </li>
+    <li> C </li>
+    </ul>
+
+    <!-- THis is without the filter safe-->
+    {{ my_html }}
+    <!-- THis is with the filter safe-->
+    {{ my_html | safe }}
+
+    {% endblock %}
+
+    {% include 'navbar.html' %}

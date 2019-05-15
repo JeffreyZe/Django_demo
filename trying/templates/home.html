@@ -3,9 +3,11 @@
     
 
     {% block content %}
-    <title> home.html </title>
-    <head> head </head>
-<h1> Hello World </h1>
-<h3> This is home.html </h3>
-yes
+    <title> home </title>
+    <head> This is the home page of Dathena </head>
+    <h1> Hello World, I am home.html </h1>
+
+    User is: {{request.user}} <br/>
+    User is autheticated: {{request.user.is_authenticated}}
+
     {% endblock %}
