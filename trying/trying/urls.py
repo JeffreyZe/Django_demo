@@ -18,11 +18,13 @@ from django.urls import path, include
 
 from pages.views import home_view, people_view
 from mockuser.views import mockuser_detail_view
+# from send.views import send_view
 
 urlpatterns = [
     path('home/', home_view, name='home'),
     path('people/', people_view, name='people'),
     path('mockuser/', mockuser_detail_view, name='mockuser'),
+    path('send/', include('send.urls')),
 
     path('admin/', admin.site.urls),
     path('', include('mockdata.urls'))
